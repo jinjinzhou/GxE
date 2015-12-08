@@ -1,0 +1,264 @@
+% !TEX encoding = MacOSRoman
+\documentclass[11pt]{article}
+\usepackage{amsbsy, amstext, amssymb, amsthm, amsmath,bm,wasysym}
+\usepackage{algorithmic,graphicx,booktabs,hyperref,multirow,rotating}
+%\geometry{verbose,letterpaper,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{epsfig}
+ \usepackage[authoryear, round, sort]{natbib}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{tabulary}
+\usepackage{pbox}
+
+
+\usepackage{lineno}
+%\linenumbers
+
+\usepackage[margin=1in]{geometry}
+%\usepackage[lined,boxed,linesnumbered]{algorithm2e}
+\usepackage{array,stmaryrd}
+\usepackage{xr}
+\externaldocument[supp-]{MaxH-Supp}
+
+
+
+\def\qed{\hfill \rule{4pt}{7pt}}
+\def\E{\mathop{\rm E\,}\nolimits}
+\def\Var{\mathop{\rm Var}\nolimits}
+\def\SE{\mathop{\rm SE}\nolimits}
+\def\Cov{\mathop{\rm Cov}\nolimits}
+\def\Pen{\mathop{\rm Pen}\nolimits}
+\def\Prior{\mathop{\rm Prior}\nolimits}
+\def\Tran{\mathop{\rm Tran}\nolimits}
+\def\midd{\mathop{\,|\,}\nolimits}
+\def\GOF{\mathop{\rm GOF}\nolimits}
+\def\Pr{\mathop{\rm P}\nolimits}
+\def\tr{\mathop{\rm tr}\nolimits}
+\def\diag{\mathop{\rm diag}\nolimits}
+
+\def\logli{\mathop{\mathcal ll }\nolimits}
+
+\def\qed{\hfill \rule{4pt}{7pt}}
+\def\E{\mathop{\rm E\,}\nolimits}
+\def\Norm{\mathcal{N}}
+\def\Var{\mathop{\rm Var}\nolimits}
+\def\Cov{\mathop{\rm Cov}\nolimits}
+\def\Pen{\mathop{\rm Pen}\nolimits}
+\def\Prior{\mathop{\rm Prior}\nolimits}
+\def\Tran{\mathop{\rm Tran}\nolimits}
+\def\midd{\mathop{\,|\,}\nolimits}
+\def\GOF{\mathop{\rm GOF}\nolimits}
+\def\tr{\mathop{\rm tr}\nolimits}
+\def\H{\mathop{\textbf{\textrm H\,}}\nolimits}
+\def\I{\mathop{\textbf{\textrm I\,}}\nolimits}
+
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\beaa}{\begin{eqnarray*}}
+\newcommand{\eeaa}{\end{eqnarray*}}
+
+
+%\usepackage[babel]{csquotes}
+%\usepackage{biblatex}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\real}[1]{\mathrm{I \! R} \mathit{^{#1}}}
+\newcommand{\trans}{^{\mbox{\tiny {\sf T}}}}
+\newcommand{\spn}{\mbox{span}}
+\newcommand{\spc}{{\mathcal S}}
+\newcommand{\cs}{\spc_{Y|\Xbf}}
+\newcommand{\vect}{\mathrm{vec}}
+
+\newcommand{\Abf}{{\bm A}}
+\newcommand{\Bbf}{{\bm B}}
+\newcommand{\Cbf}{{\bm C}}
+\newcommand{\Dbf}{{\bm D}}
+\newcommand{\Ebf}{{\bm E}}
+\newcommand{\Fbf}{{\bm F}}
+\newcommand{\Gbf}{{\bm G}}
+\newcommand{\Hbf}{{\bm H}}
+\newcommand{\Ibf}{{\bm I}}
+\newcommand{\Jbf}{{\bm J}}
+\newcommand{\Lbf}{{\bm L}}
+\newcommand{\Kbf}{{\bm K}}
+\newcommand{\Mbf}{{\bm M}}
+\newcommand{\Obf}{{\bm O}}
+\newcommand{\Pbf}{{\bm P}}
+\newcommand{\Qbf}{{\bm Q}}
+\newcommand{\Rbf}{{\bm R}}
+\newcommand{\Sbf}{{\bm S}}
+\newcommand{\Tbf}{{\bm T}}
+\newcommand{\Ubf}{{\bm U}}
+\newcommand{\Vbf}{{\bm V}}
+\newcommand{\Wbf}{{\bm W}}
+\newcommand{\Xbf}{{\bm X}}
+\newcommand{\Ybf}{{\bm Y}}
+\newcommand{\Zbf}{{\bm Z}}
+
+\newcommand{\abf}{{\bm a}}
+\newcommand{\bbf}{{\bm b}}
+\newcommand{\ebf}{{\bm e}}
+\newcommand{\fbf}{{\bm f}}
+\newcommand{\gbf}{{\bm g}}
+\newcommand{\lbf}{{\bm l}}
+\newcommand{\ubf}{{\bm u}}
+\newcommand{\vbf}{{\bm v}}
+\newcommand{\wbf}{{\bm w}}
+\newcommand{\xbf}{{\bm x}}
+\newcommand{\ybf}{{\bm y}}
+\newcommand{\zbf}{{\bm z}}
+
+\newcommand{\zerobf}{{\mathbf 0}}
+\newcommand{\onebf}{{\mathbf 1}}
+
+\newcommand{\greekbold}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\alphabf}{\greekbold{\alpha}}
+\newcommand{\betabf}{\greekbold{\beta}}
+\newcommand{\deltabf}{\greekbold{\delta}}
+\newcommand{\etabf}{\greekbold{\eta}}
+\newcommand{\epsilonbf}{\greekbold{\epsilon}}
+\newcommand{\gammabf}{\greekbold{\gamma}}
+\newcommand{\mubf}{\greekbold{\mu}}
+\newcommand{\nubf}{\greekbold{\nu}}
+\newcommand{\pibf}{\greekbold{\pi}}
+\newcommand{\phibf}{\greekbold{\phi}}
+\newcommand{\psibf}{\greekbold{\psi}}
+\newcommand{\sigmabf}{\greekbold{\sigma}}
+\newcommand{\taubf}{\greekbold{\tau}}
+\newcommand{\zetabf}{\greekbold{\zeta}}
+\newcommand{\thetabf}{\greekbold{\theta}}
+\newcommand{\lambdabf}{\greekbold{\lambda}}
+\newcommand{\Gammabf}{\greekbold{\Gamma}}
+\newcommand{\Phibf}{\greekbold{\Phi}}
+\newcommand{\Thetabf}{\greekbold{\Theta}}
+\newcommand{\Sigmabf}{\greekbold{\Sigma}}
+\newcommand{\Lambdabf}{\greekbold{\Lambda}}
+\newcommand{\Omegabf}{\greekbold{\Omega}}
+\newcommand{\Pibf}{\greekbold{\Pi}}
+
+\newcommand{\Xb}{\mathbb{X}}
+\newcommand{\Xf}{\mathfrak{X}}
+
+
+
+
+
+\title{Integrating Multiple Correlated Phenotypes for Gene and Environment Interactions Analysis by Maximizing Heritability}
+
+
+\begin{document}
+\baselineskip=20pt
+
+\maketitle
+\setcounter{page}{1}
+
+
+
+\begin{abstract}
+\end{abstract}
+
+\vspace{1cm}
+\subsection*{Keywords:}
+Principal component of heritability, Co-heritability,  GWAS, Multivariate analysis
+
+\clearpage
+\section{Introduction}
+
+
+
+\section{Material and Method}
+\subsection{Integration of Phenotypes}\label{sec:method_integration} Let $m$ be the unknown number of independent causal loci, indexed by $k$, $n$ be the number of individuals, indexed by $i$, and $T$ be the number of phenotypes, indexed by $t$. In the absence of any covariates or major gene effects, each phenotype is assumed to have the standard polygenic  model \citep{falconer1981introduction}, given by 
+\bea
+y_{ti} &=&\mu_{t}+\sum_{k=1}^m a_{tk}x_{ki}+e_{ti}+\epsilon_{ti}\nonumber\\
+           &=&\mu_{t}+g_{ti}+e_{ti}+\epsilon_{ti},\label{linear}
+\eea
+where $y_{ti}$ is the $t$th phenotypic value for the $i$th individual; $\mu_{t}$ is the mean of the phenotype; $x_{ki}$ is the standardized minor allele count at locus $k$ of individual $i$, $a_{tk}$ is the additive allelic effect of locus $k$ on phenotype $t$, $g_{ti}=\sum_{k=1}^m a_{tk}x_{ki}$ is the total additive genetic effect of individual $i$'s phenotype $t$, and the $\epsilon_{ti}$ are the residual effects.  We treat $a_{tk}$ as random variables independent of the $x_{ki}$s and of each other, with zero means and common variances and covariances, so that 
+\beaa
+\E(g_{ti})&=&0\\
+\Var(g_{ti})&=&\sigma_{at}^2 \\
+\Cov(g_{ti}, g_{t'i})&=&\sigma_{tt'}\\
+&=&\sigma_{at}\sigma_{at'}\rho_{tt'},
+\eeaa
+where $\sigma_{at}^2=\Var(\sum_{k=1}^m a_{tk}x_{ki})$ is the total additive genetic variance and $\sigma_{tt'}$ is the covariance between the additive effects for phenotypes $t$ and $t'$, average over the $k$ causal loci. This $\sigma_{tt'}$ can be viewed as the average pleiotropy. Finally, assuming the genetic and environmental effects are independent we have 
+\begin{eqnarray}
+\Vbf_p&=&\Var(\ybf_i)=\Var(\gbf_i+\epsilonbf_i)=\Vbf_g+\Vbf_e,
+\end{eqnarray}
+where $\textbf{y}_i$, $\textbf{g}_i$, and $\bm{\epsilon}_i$ are the length $T$ vectors of phenotypes, genetic and environment components for the $i$th individual, and
+\bea
+\Vbf_g &=&\Var(g_{ti})= \left(
+\begin{array}{ccc}
+\sigma_{a_1}^2  &\ldots& \sigma_{a_{1T}}\\
+\ldots & \ldots & \ldots \\
+\sigma_{a_{T1}}  &\ldots &\sigma_{a_T}^2 
+\end{array}
+\right)\nonumber
+\\
+\Vbf_e &=& \Var(\epsilon_{ti})=\left(
+\begin{array}{ccc}
+\sigma_{e_1}^2  & \ldots& \sigma_{e_{1T}}   \\
+\ldots & \ldots & \ldots \\
+\sigma_{e_{T1}} &\ldots &  \sigma_{e_T}^2 
+\end{array}
+\right).\label{var-cov}
+\eea
+Note that this model also implies
+\beaa
+\Cov(y_{ti},y_{ti'})&=&G_{ii'} \sigma^2_{at} \\
+\Cov(y_{ti},y_{t'i'})&=&G_{ii'} \sigma_{att'}
+\eeaa
+where the $G_{ii'}$s are the genetic relationship coefficients for individuals $i$ and $i'$. Elements of the $n\times n$ genetic relationship matrix, $\Gbf$, can be determined from pedigree information \citep{LangeStatGen} or estimated from GWAS data \citep{Yang:2010zr}. This multivariate polygenic model is discussed in~\cite{Korte:2012kx} and \cite{Lee:2012aa}. 
+
+Narrow sense heritability of the $t$th phenotype is defined as the proportion of the additive genetic variance among the total phenotypic variance, i.e.,
+\beaa
+h_t^2&=&\frac{\sigma_{a_t}^2}{\sigma_{a_t}^2+\sigma_{e_t}^2}.
+\eeaa
+To integrate multiple phenotypes,  our goal is to find a vector of  coefficients $\lbf$ such that $\Ybf \lbf$  has the maximum heritability among all such linear combinations of the phenotypes, where $\Ybf=(\ybf_1,\ldots,\ybf_T)$ is a $n\times T$ matrix of the collection of all $T$ phenotypes. The heritability of any linear combination of phenotypes $\Ybf\lbf$,  can be expressed as the Rayleigh quotient~\citep{horn85},
+\bea
+h_l^2&=&\frac{l'\Vbf_gl}{l'\Vbf_pl}\label{RQ}.
+\eea
+Henceforth we denote $\Ybf\lbf$ with $\lbf$ chosen to maximize heritability as the set of MaxH phenotypes. The same optimization problem (\ref{RQ}) has also been encountered in Fisher's linear discriminant analysis (LDA) for classification \citep{Witten:2011fk}. Detailed explanation for optimizing equation~(\ref{RQ}) can be found in Supplementary Material and the notes~\citep{welling2005fisher}. Briefly, one needs to eigendecompose the matrix $\Vbf_g^{\frac{1}{2}}\Vbf_p^{-1}\Vbf_g^{\frac{1}{2}}$ and the desired optimization solution is to find the biggest eigenvalue, i.e., maximized heritability $h_l^2$ and the corresponding eigenvector $\wbf$. 
+
+The above calculation assumes the parameters in $\Vbf_p$ and $\Vbf_g$ are known; in reality we need to estimate them. Historically $\Vbf_p$ and $\Vbf_g$ were estimated using data on pedigrees with known genetic relationships, i.e., $\Gbf$. More recent work  shows how to approximate $\Gbf$ and estimate $\Vbf_p$ and $\Vbf_g$ from GWAS data on population based samples~\citep{Yang:2010zr}. With $\Gbf$ treated as known, $(\Vbf_g, \Vbf_p)$ can be estimated using Maximum Likelihood (ML), Restricted ML (REML) or Method of Moments (MOM) approaches. When the sample size is large, the maximization is not trivial and the computation is costly.  We used ML for the application example, and recommend that ML or REML be used in practice. For efficiency of computation, we used the much simpler MOM approach to estimate $\Vbf_g$ and $\Vbf_p$ in the simulations~\citep{LangeStatGen}. We summarize the steps needed to compute the MaxH phenotype in the Supplementary Material.
+
+\subsection{Association Testing and Power Approximation}\label{sec:method_testing} 
+Thus far, we have focused on maximizing heritability in order to integrate multiple phenotypes. Now we consider testing and power for individual SNPs using MaxH phenotype.  To test the hypothesis of no association for a single variant, we include a major gene effect and use the ``mixed model" \citep{Korte:2012kx}
+\bea
+y_{ti}&=&\mu_{t}+b_tx_{0i}+g_{ti}+\epsilon_{ti}\label{mixed1}
+\eea
+where $x_{0i}$ is the standardized additive coding for the SNP we wish to test and $\bbf=(b_1,\ldots,b_T)$ is the vector of genetic effects for the $T$ phenotypes. Letting $\Ybf_{l}=(y_{li})=\Ybf \lbf$ denote the $n$-vector of MaxH phenotypes, for each element, we have 
+\beaa
+y_{li}&=&\lbf'\bm{y_i}=\mu_l+b_lx_{0i}+g_{li}+\epsilon_{li}
+\eeaa
+where $\ybf_i=(y_{1i},y_{2i},\ldots,y_{ti})'$ is individual $i$'s $T$ phenotypic measurments, $b_l=\lbf'\bm{b}$, $\mu_l=\lbf'(\mu_1,\ldots,\mu_T)$, $g_{li}=\lbf'\bm{g_i}$,  and $\epsilon_{li}=\lbf'\epsilonbf_i$. Hence
+\beaa
+\E(y_{li})&=&\mu_l+b_l\\
+\Var(y_{li})&=&\lbf'\Vbf_p\lbf.
+\eeaa
+To test $\mbox{H}_0:\, b_l=\lbf'\bm{b}=0$, a Wald test is given by
+\bea
+W&=&\frac{\hat{b}_l}{\SE(\hat{b}_l)}\label{eq:waldstat}
+\eea
+where $\hat{b}_l$ is the ordinary least squares (OLS) estimator of $b_l$ and $\SE$ is its standard error under the regression model  \citep{Klei:2008fk}.  In the calculation of $\SE(\hat{b})$ we have neglected the correlation of subjects' phenotypes generated by the polygenic background, since in a population based sample, the genetic relationships are small in practice. But the correlations are considered when generating MaxH phenotypes. Simulation example shows that the type I error rate is protected.
+
+The power of any test to reject $\mbox{H}_0:\, b_l=\lbf'\bm{b}=0$ depends not only on the test statistic, but also on how $\bm{b}=(b_1,\ldots,b_T)$ is chosen.   The vector $\bm{b}$ can be chosen arbitrarily, but if the polygenic model is correct, in a GWAS setting with polygenic effects, it is natural to consider testing SNPs whose genetic effects  are consistent with the polygenic model, i.e., $\bm{b}\sim c\mathcal{N}(0,\Vbf_g)$, where $c$ is a scale parameter chosen to determine the heritability of the major gene effect. When including a major gene effect, the overall genetic variance of a linear combination becomes $b_l^2+\lbf'\Var(g_i)\lbf$. In order to maintain a fixed overall heritability (Equation (\ref{RQ})), we choose the major gene effect to satisfy, $
+b_l^2=c^2\lbf'\Vbf_g\lbf$,
+where $\lbf'\Vbf_g\lbf$ is again the total genetic variance including the major gene effect; this implies that $b_l$ explains a fraction $c^2$ of the total heritability. 
+
+The Wald test statistic $W^2$ in equation~(\ref{eq:waldstat}) follows a chi-square distribution with 1 degree of freedom, i.e., $\chi^2(\delta,1)$ with non-centrality parameter (NCP)
+\bea
+\delta^2  & =  & n\frac{c^2h_l^2}{1-c^2h_l^2}. \label{NCPt}
+\eea
+As heritability $h_l^2$ increases, the NCP and the power of the test increases, as does the asymptotic power. Power gain is heavily dependent on the gain of heritability. For the MaxH phenotype, the structure of the genotypic and phenotypic variance-covariance matrix and the number of phenotypes combined determines the heritability. In practice $\Vbf_p$ and $\Vbf_g$ must be estimated, and sampling error may decrease power if too many phenotypes are added. This is considered later, as well as when $\bm{b}$ comes from arbitrary distributions. 
+
+
+
+\clearpage
+\section*{Acknowledgments*}
+
+
+
+
+
+\end{document}
+
